@@ -3,24 +3,39 @@ window.onload = function(){
 
 
     // QNA hideANs
+    // 1
     document.querySelector('.ques1').addEventListener('mouseover',function(){
-        document.querySelector('.hideAns1').style.top = '0px'
+        // mouseover hideAns 같이 움직이는 거 방지
+        document.querySelector('.hideAns2, .hideAns3').style.marginTop = '180px'
+        // 답변 올라오기 animate
+        document.querySelector('.hideAns1').style.marginTop = '-180px'
+        document.querySelector('.ans1').style.marginTop = '0px'
     })
-    document.querySelector('.hideAns1').addEventListener('mouseout',function(e){
-        e.target.style.top = '180px'
+    document.querySelector('.hideAns1').addEventListener('mouseout',function(){
+        document.querySelector('.hideAns1').style.marginTop = '180px'
+        document.querySelector('.ans1').style.marginTop = '0px'
     })
 
+    // 2
     document.querySelector('.ques2').addEventListener('mouseover',function(){
-        document.querySelector('.hideAns2').style.top = '0px'
+        document.querySelector('.hideAns1, .hideAns3').style.marginTop = '180px'
+        document.querySelector('.hideAns2').style.marginTop = '-180px'
+        document.querySelector('.ans2').style.marginTop = '0px'
     })
     document.querySelector('.hideAns2').addEventListener('mouseout',function(e){
-        e.target.style.top = '180px'
+        document.querySelector('.hideAns2').style.marginTop = '180px'
+        document.querySelector('.ans2').style.marginTop = '0px'
     })
+
+    // 3
     document.querySelector('.ques3').addEventListener('mouseover',function(){
-        document.querySelector('.hideAns3').style.top = '0px'
+        document.querySelector('.hideAns1, .hideAns2').style.marginTop = '180px'
+        document.querySelector('.hideAns3').style.marginTop = '-180px'
+        document.querySelector('.ans2').style.marginTop = '0px'
     })
     document.querySelector('.hideAns3').addEventListener('mouseout',function(e){
-        e.target.style.top = '180px'
+        document.querySelector('.hideAns3').style.marginTop = '180px'
+        document.querySelector('.ans3').style.marginTop = '0px'
     })
 
 
